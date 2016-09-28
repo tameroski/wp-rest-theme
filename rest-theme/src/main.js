@@ -13,9 +13,8 @@ Vue.component('Post', Post)
 import Page from './page.vue'
 Vue.component('Page', Page)
 
-/* Pages templates : Page_[template name]*/
-import Page_test from './page-test.vue'
-Vue.component('Page_test', Page_test)
+import Page_template from './page-template.vue'
+Vue.component('Page_template', Page_template)
 
 import Header from './theme-header.vue'
 Vue.component('theme-header', Header)
@@ -57,7 +56,7 @@ router.on(wp.base_path, {
 for (var key in wp.routes) {
     var route = wp.routes[key];
     router.on(wp.base_path + route.slug, {
-        component: Vue.component(capitalize(route.type) + (route.template != '' ? '_'+route.template : '')),
+        component: Vue.component(capitalize(route.type) + (route.template != '' ? '_' + route.template : '')),
         postId: route.id
     });
 }

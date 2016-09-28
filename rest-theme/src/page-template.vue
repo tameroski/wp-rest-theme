@@ -4,7 +4,9 @@
 
 <template>
     <div class="page">
-        <h1 class="entry-title">HELLO : {{ page.title.rendered }}</h1>
+        <h1 class="entry-title">{{ page.title.rendered }}</h1>
+
+        <h2>With a different template this time ...</h2>
 
         <div class="entry-content">
             {{{ page.content.rendered }}}

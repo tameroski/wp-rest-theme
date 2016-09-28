@@ -46,7 +46,7 @@ function rest_theme_routes() {
 	return $routes;
 }
 
-function attach_template_to_page( $page_name, $template_name ) {
+function rest_theme_attach_template_to_page( $page_name, $template_name ) {
 
     $page = get_page_by_title( $page_name, OBJECT, 'page' );
     $page_id = null == $page ? -1 : $page->ID;
@@ -58,4 +58,5 @@ function attach_template_to_page( $page_name, $template_name ) {
     return $page_id;
 }
 
-attach_template_to_page( 'test', 'test' );
+/* Attach templates to pages here : */
+//rest_theme_attach_template_to_page( 'Page name', 'template' );

@@ -37,6 +37,7 @@ function rest_theme_routes() {
 				'id'   => get_the_ID(),
 				'type' => get_post_type(),
 				'slug' => basename( get_permalink() ),
+				'template' => get_page_template_slug( get_the_ID() ),
 			);
 		}
 	}
@@ -44,3 +45,17 @@ function rest_theme_routes() {
 
 	return $routes;
 }
+
+function attach_template_to_page( $page_name, $template_name ) {
+
+    $page = get_page_by_title( $page_name, OBJECT, 'page' );
+    $page_id = null == $page ? -1 : $page->ID;
+
+    if( -1 != $page_id ) {
+        update_post_meta( $page_id, '_wp_page_template', $template_name );
+    }
+
+    return $page_id;
+}
+
+attach_template_to_page( 'test', 'test' );

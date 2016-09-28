@@ -13,6 +13,7 @@ Vue.component('Post', Post)
 import Page from './page.vue'
 Vue.component('Page', Page)
 
+/* Pages templates : Page_[template name]*/
 import Page_test from './page-test.vue'
 Vue.component('Page_test', Page_test)
 

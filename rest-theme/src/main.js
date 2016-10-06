@@ -33,7 +33,7 @@ var App = Vue.extend({
 
     methods: {
         updateTitle(pageTitle) {
-            document.title = (pageTitle ? pageTitle + ' - ' : '') + wp.site_name;
+            document.title = (pageTitle ? pageTitle + ' | ' : '') + wp.site_name;
         }
     },
 
